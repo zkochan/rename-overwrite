@@ -1,5 +1,7 @@
 # rename-overwrite
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zkochan/rename-overwrite.svg)](https://greenkeeper.io/)
+
 [![Status](https://travis-ci.org/zkochan/rename-overwrite.svg?branch=master)](https://travis-ci.org/zkochan/rename-overwrite "See test builds")
 
 > Like `fs.rename` but overwrites existing file or directory
