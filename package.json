@@ -35,7 +35,7 @@
     "timeout-then": "^1.1.0"
   },
   "devDependencies": {
-    "load-json-file": "^2.0.0",
+    "load-json-file": "^3.0.0",
     "standard": "^10.0.2",
     "tape": "^4.7.0",
     "tempy": "^0.1.0",
