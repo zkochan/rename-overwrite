@@ -2,7 +2,7 @@
 const test = require('tape')
 const writeJsonFile = require('write-json-file')
 const loadJsonFile = require('load-json-file')
-const renameOverwrite = require('.')
+const renameOverwrite = require('rename-overwrite')
 const tempy = require('tempy')
 
 test('overwrite directory', t => {
