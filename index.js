@@ -15,7 +15,7 @@ module.exports = function renameOverwrite (oldPath, newPath) {
         case 'EEXIST':
           return rimraf(newPath)
             .then(() => rename(oldPath, newPath))
-        // weird Windows shit
+        // weird Windows stuff
         case 'EPERM':
           return timeout(200)
             .then(() => rimraf(newPath))
@@ -33,7 +33,7 @@ module.exports.sync = function renameOverwriteSync (oldPath, newPath) {
     switch (err.code) {
       case 'ENOTEMPTY':
       case 'EEXIST':
-      case 'EPERM': // weird Windows shit
+      case 'EPERM': // weird Windows stuff
         rimrafSync(newPath)
         fs.renameSync(oldPath, newPath)
         return
