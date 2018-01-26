@@ -1,8 +1,8 @@
 dependencies:
   graceful-fs: 4.1.11
   rimraf: 2.6.2
-  thenify: 3.3.0
   timeout-then: 1.1.0
+  util.promisify: 1.0.0
 devDependencies:
   load-json-file: 4.0.0
   package-preview: 1.0.4
@@ -118,7 +118,6 @@ packages:
     resolution:
       integrity: sha1-tDLdM1i2NM914eRmQ2gkBTPB3b4=
   /any-promise/1.3.0:
-    dev: false
     resolution:
       integrity: sha1-q8av7tzqUugJzcA3au0845Y10X8=
   /argparse/1.0.9:
@@ -396,7 +395,7 @@ packages:
     dependencies:
       foreach: 2.0.5
       object-keys: 1.0.11
-    dev: true
+    dev: false
     engines:
       node: '>= 0.4'
     resolution:
@@ -481,7 +480,6 @@ packages:
       has: 1.0.1
       is-callable: 1.1.3
       is-regex: 1.0.4
-    dev: true
     engines:
       node: '>= 0.4'
     resolution:
@@ -491,7 +489,6 @@ packages:
       is-callable: 1.1.3
       is-date-object: 1.0.1
       is-symbol: 1.0.1
-    dev: true
     engines:
       node: '>= 0.4'
     resolution:
@@ -847,7 +844,7 @@ packages:
     resolution:
       integrity: sha1-LEBFC5NI6X8oEyJZO6lnBLmr1NQ=
   /foreach/2.0.5:
-    dev: true
+    dev: false
     resolution:
       integrity: sha1-C+4AUBiusmDQo6865ljdATbsG5k=
   /fs-extra/5.0.0:
@@ -862,7 +859,7 @@ packages:
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
   /function-bind/1.1.1:
-    dev: true
+    dev: false
     resolution:
       integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
   /generate-function/2.0.0:
@@ -943,7 +940,7 @@ packages:
   /has/1.0.1:
     dependencies:
       function-bind: 1.1.1
-    dev: true
+    dev: false
     engines:
       node: '>= 0.8.0'
     resolution:
@@ -1022,13 +1019,12 @@ packages:
     resolution:
       integrity: sha1-XuWOqlounIDiFAe+3yOuWsCRs/w=
   /is-callable/1.1.3:
-    dev: true
+    dev: false
     engines:
       node: '>= 0.4'
     resolution:
       integrity: sha1-hut1OSgF3cM69xySoO7fdO52BLI=
   /is-date-object/1.0.1:
-    dev: true
     engines:
       node: '>= 0.4'
     resolution:
@@ -1105,7 +1101,6 @@ packages:
   /is-regex/1.0.4:
     dependencies:
       has: 1.0.1
-    dev: true
     engines:
       node: '>= 0.4'
     resolution:
@@ -1115,7 +1110,6 @@ packages:
     resolution:
       integrity: sha512-qgDYXFSR5WvEfuS5dMj6oTMEbrrSaM0CrFk2Yiq/gXnBvD9pMa2jGXxyhGLfvhZpuMZe18CJpFxAt3CRs42NMg==
   /is-symbol/1.0.1:
-    dev: true
     engines:
       node: '>= 0.4'
     resolution:
@@ -1354,7 +1348,7 @@ packages:
     resolution:
       integrity: sha512-OHHnLgLNXpM++GnJRyyhbr2bwl3pPVm4YvaraHrRvDt/N3r+s/gDVHciA7EJBTkijKXj61ssgSAikq1fb0IBRg==
   /object-keys/1.0.11:
-    dev: true
+    dev: false
     engines:
       node: '>= 0.4'
     resolution:
@@ -1370,6 +1364,15 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-exHJeq6kBKj58mqGyTQ9DFvrZC/eR6OwxzoM9YRoGBqrXYonaFyGiFMuc9VZrXf7DarreEwMpurG3dd+CNyW5w==
+  /object.getownpropertydescriptors/2.0.3:
+    dependencies:
+      define-properties: 1.1.2
+      es-abstract: 1.10.0
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha1-h1jIRvW0B62rDyNuCYbxSwUcqhY=
   /once/1.4.0:
     dependencies:
       wrappy: 1.0.2
@@ -2013,6 +2016,7 @@ packages:
   /thenify/3.3.0:
     dependencies:
       any-promise: 1.3.0
+    dev: true
     resolution:
       integrity: sha1-5p44obq+lpsBCCB5eLn2K4hgSDk=
   /through/2.3.8:
@@ -2096,6 +2100,13 @@ packages:
     dev: true
     resolution:
       integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+  /util.promisify/1.0.0:
+    dependencies:
+      define-properties: 1.1.2
+      object.getownpropertydescriptors: 2.0.3
+    dev: false
+    resolution:
+      integrity: sha512-i+6qA2MPhvoKLuxnJNpXAGhg7HphQOSUq2LKMZD0m15EiskXUkMvKdF4Uui0WYeCUGea+o2cw/ZuwehtfsrNkA==
   /validate-npm-package-license/3.0.1:
     dependencies:
       spdx-correct: 1.0.2
@@ -2167,6 +2178,6 @@ specifiers:
   standard: ^10.0.2
   tape: ^4.7.0
   tempy: ^0.2.1
-  thenify: ^3.3.0
   timeout-then: ^1.1.0
+  util.promisify: ^1.0.0
   write-json-file: ^2.2.0

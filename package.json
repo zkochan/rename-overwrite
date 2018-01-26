@@ -34,8 +34,8 @@
   "dependencies": {
     "graceful-fs": "^4.1.11",
     "rimraf": "^2.6.1",
-    "thenify": "^3.3.0",
-    "timeout-then": "^1.1.0"
+    "timeout-then": "^1.1.0",
+    "util.promisify": "^1.0.0"
   },
   "devDependencies": {
     "load-json-file": "^4.0.0",

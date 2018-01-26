@@ -1,11 +1,11 @@
 'use strict'
 const fs = require('graceful-fs')
-const thenify = require('thenify')
-const rimraf = thenify(require('rimraf'))
+const promisify = require('util.promisify')
+const rimraf = promisify(require('rimraf'))
 const rimrafSync = require('rimraf').sync
 const timeout = require('timeout-then')
 
-const rename = thenify(fs.rename)
+const rename = promisify(fs.rename)
 
 module.exports = function renameOverwrite (oldPath, newPath) {
   return rename(oldPath, newPath)
