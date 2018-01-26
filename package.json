@@ -6,6 +6,9 @@
   "files": [
     "index.js"
   ],
+  "engines": {
+    "node": ">=4"
+  },
   "scripts": {
     "test": "standard && preview && node test"
   },
@@ -20,7 +23,7 @@
   ],
   "author": {
     "name": "Zoltan Kochan",
-    "email": "zoltan.kochan@gmail.com",
+    "email": "z@kochan.io",
     "url": "https://www.kochan.io"
   },
   "license": "MIT",
