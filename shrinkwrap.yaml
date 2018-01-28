@@ -1,7 +1,7 @@
 dependencies:
+  delay: 2.0.0
   graceful-fs: 4.1.11
   rimraf: 2.6.2
-  timeout-then: 1.1.0
   util.promisify: 1.0.0
 devDependencies:
   load-json-file: 4.0.0
@@ -118,6 +118,7 @@ packages:
     resolution:
       integrity: sha1-tDLdM1i2NM914eRmQ2gkBTPB3b4=
   /any-promise/1.3.0:
+    dev: true
     resolution:
       integrity: sha1-q8av7tzqUugJzcA3au0845Y10X8=
   /argparse/1.0.9:
@@ -429,6 +430,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-wSyYHQZ4RshLyvhiz/kw2Qf/0ag=
+  /delay/2.0.0:
+    dependencies:
+      p-defer: 1.0.0
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-kRLq3APk7H4AKXM3iW8nO72R+uU=
   /detect-indent/5.0.0:
     dev: true
     engines:
@@ -1404,6 +1413,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-/7xJiDNuDoM94MFox+8VISGqf7M=
+  /p-defer/1.0.0:
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-n26xgvbJqozXQwBKfU+WsZaw+ww=
   /p-limit/1.2.0:
     dependencies:
       p-try: 1.0.0
@@ -2030,12 +2045,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-AARWmzfHx0ujnEPzzteNGtlBQL4=
-  /timeout-then/1.1.0:
-    dependencies:
-      any-promise: 1.3.0
-    dev: false
-    resolution:
-      integrity: sha1-AUWwYHAVnBfiFG/SkrAaG9geX7w=
   /trim-newlines/2.0.0:
     dev: true
     engines:
@@ -2171,6 +2180,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 4
 shrinkwrapVersion: 3
 specifiers:
+  delay: ^2.0.0
   graceful-fs: ^4.1.11
   load-json-file: ^4.0.0
   package-preview: ^1.0.4
@@ -2178,6 +2188,5 @@ specifiers:
   standard: ^10.0.2
   tape: ^4.7.0
   tempy: ^0.2.1
-  timeout-then: ^1.1.0
   util.promisify: ^1.0.0
   write-json-file: ^2.2.0
