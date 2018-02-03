@@ -8,12 +8,6 @@ const delay = require('delay')
 const rename = promisify(fs.rename)
 
 module.exports = function renameOverwrite (oldPath, newPath) {
-  return _renameOverwrite(oldPath, newPath, 0, 200)
-}
-
-const MAX_RETRY = 8
-
-function _renameOverwrite (oldPath, newPath, tries, delayOnEperm) {
   return rename(oldPath, newPath)
     .catch(err => {
       switch (err.code) {
@@ -29,16 +23,6 @@ function _renameOverwrite (oldPath, newPath, tries, delayOnEperm) {
         default:
           throw err
       }
-    })
-    .catch(err => {
-      // Windows Defender holds locks on newly created files
-      // so EPERM errors are retried a lot
-      // see related issue: https://github.com/pnpm/pnpm/issues/1015
-      if (err.code !== 'EPERM' || tries >= MAX_RETRY) {
-        throw err
-      }
-      return delay(delayOnEperm)
-        .then(() => _renameOverwrite(oldPath, newPath, tries + 1, delayOnEperm + 200))
     })
 }
 
