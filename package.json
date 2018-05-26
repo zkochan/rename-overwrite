@@ -32,7 +32,6 @@
   },
   "homepage": "https://github.com/zkochan/rename-overwrite#readme",
   "dependencies": {
-    "delay": "^2.0.0",
     "graceful-fs": "^4.1.11",
     "rimraf": "^2.6.1",
     "util.promisify": "^1.0.0"

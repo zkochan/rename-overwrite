@@ -3,7 +3,6 @@ const fs = require('graceful-fs')
 const promisify = require('util.promisify')
 const rimraf = promisify(require('rimraf'))
 const rimrafSync = require('rimraf').sync
-const delay = require('delay')
 
 const rename = promisify(fs.rename)
 
@@ -17,9 +16,14 @@ module.exports = function renameOverwrite (oldPath, newPath) {
             .then(() => rename(oldPath, newPath))
         // weird Windows stuff
         case 'EPERM':
-          return delay(200)
-            .then(() => rimraf(newPath))
-            .then(() => rename(oldPath, newPath))
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              rimraf(newPath)
+                .then(() => rename(oldPath, newPath))
+                .then(resolve)
+                .catch(reject)
+            }, 200)
+          })
         default:
           throw err
       }
