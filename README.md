@@ -1,3 +1,5 @@
+> moved to https://github.com/zkochan/packages/tree/master/rename-overwrite
+
 # rename-overwrite
 
 [![Status](https://travis-ci.org/zkochan/rename-overwrite.svg?branch=master)](https://travis-ci.org/zkochan/rename-overwrite "See test builds")
